@@ -1,0 +1,28 @@
+# Node.js
+node_modules/
+# Ignore environment file
+.env
+# Logs
+logs
+*.log
+
+# Dependency directories
+pids
+logs
+results
+*.pid
+*.log
+*.seed
+*.pid.lock
+
+# Optional: ESLint configuration
+.eslintcache
+
+# Optional: IDE configuration
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

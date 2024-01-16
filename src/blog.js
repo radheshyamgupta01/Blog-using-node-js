@@ -1,7 +1,8 @@
 const { Sequelize, DataTypes } = require("sequelize");
 const express = require("express");
 const bodyParser = require("body-parser");
-require("dotenv").config();
+
+require('dotenv').config();
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 const cors = require("cors");
@@ -10,14 +11,15 @@ app.use(bodyParser.json());
 
 
 const sequelize = new Sequelize(
-  'xyx',      // Database name
-  'root',     // Database username
-  '123456789', // Database password
+  process.env.db_name,
+  process.env.db_user,
+  process.env.db_pass,
   {
-    host: 'localhost',  // Database host
-    dialect: 'mysql',   // Database dialect (e.g., mysql, postgres, sqlite)
+    host: 'localhost',
+    dialect: 'mysql',
   }
 );
+
 const Blog = sequelize.define("blog", {
   title: {
     type: DataTypes.STRING,
